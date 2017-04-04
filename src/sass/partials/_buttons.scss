@@ -1,0 +1,23 @@
+.btn {
+
+
+  &-default {
+
+    &:hover {
+
+    }
+    &:focus,
+    &:active,
+    &:active:hover {
+    }
+  }
+
+  @for $btn from 20 through 50 {
+    @if $btn % 2 == 0 {
+      &.btn-#{$btn} {
+        padding-left: $btn#{'px'};
+        padding-right: $btn#{'px'};
+      }
+    }
+  }
+}
