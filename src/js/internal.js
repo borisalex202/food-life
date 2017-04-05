@@ -7,9 +7,15 @@
         lg: 1200
     };
     var elements = {
-
+        siteHeader: $('.site-header'),
+        iconMenu: $('.icon-menu'),
+        mobileMenu: $('.mobile-menu'),
+        mobileParent: $('.mobile-menu').find('.has-child > a')
     };
     var options = {
+
     };
+
+    @@include('./partials/_mobileMenu.js')
 
 })(jQuery);

@@ -16,10 +16,16 @@ body {
   min-height: 100%;
   position: relative;
   overflow: hidden;
+  padding-top: 97px;
+}
+.container {
+  @media (min-width: $screen-lg) {
+    box-sizing: content-box;
+  }
 }
 @media (max-width: $screen-sm-max) {
   .container {
-    padding-left: 23px;
-    padding-right: 23px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }

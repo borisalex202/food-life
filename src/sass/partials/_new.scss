@@ -1,0 +1,124 @@
+.new {
+  &-container {
+    margin: 0 -15px;
+    @include flexbox();
+    @include flex-wrap(wrap);
+  }
+  &-item {
+    display: block;
+    width: calc(33.3333% - 30px);
+    margin: 0 15px 40px;
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    padding-bottom: 20px;
+
+    * {
+      @include transition($transition);
+    }
+    &:hover {
+      .new {
+        &-title {
+          color: #D73A2A;
+        }
+        &-date {
+          &:before {
+            background: #D73A2A;
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    padding: 35px 20px 20px;
+  }
+  &-thumb {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 220px;
+  }
+  &-title {
+    font-family: $font-family-second;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 13px;
+  }
+  &-description {
+    font-family: $font-family-second;
+    line-height: 22px;
+    margin-bottom: 15px;
+  }
+  &-city {
+    font-family: $font-family-second;
+    font-size: 13px;
+    line-height: 13px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: rgba(0,0,0,.5);
+  }
+  &-date {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: $font-family-second;
+    font-size: 13px;
+    line-height: 13px;
+    color: rgba(0,0,0,.5);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: -19px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #F8A432;
+      @include transition($transition);
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    &-item {
+      width: 100%;
+      padding-bottom: 30px;
+    }
+    &-thumb {
+      min-height: 400px;
+    }
+    &-content {
+      padding: 45px 30px 30px;
+    }
+    &-title {
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+    &-description {
+      font-size: 18px;
+      line-height: 28px;
+    }
+    &-city {
+      bottom: 30px;
+      left: 30px;
+    }
+    &-date {
+      bottom: 30px;
+      right: 30px;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    &-thumb {
+      min-height: 170px;
+    }
+    &-content {
+      padding: 32px 17px 15px;
+    }
+    &-title {
+      margin-bottom: 15px;
+    }
+  }
+}

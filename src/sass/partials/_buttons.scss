@@ -1,17 +1,39 @@
 .btn {
-
+  font-family: $font-family-second;
+  font-size: $font-size;
+  line-height: 15px;
+  padding: 12px 25px;
+  min-width: 165px;
+  border: 0;
+  border-radius: 20px;
+  @include transition($transition);
 
   &-default {
+    background: $btn-default-bg;
+    color: #fff;
 
     &:hover {
-
+      background: $btn-default-bg-hover;
     }
     &:focus,
     &:active,
     &:active:hover {
+      background: $btn-default-bg-active;
     }
   }
+  &-primary {
+    background: $btn-primary-bg;
+    color: #fff;
 
+    &:hover {
+      background: $btn-primary-bg-hover;
+    }
+    &:focus,
+    &:active,
+    &:active:hover {
+      background: $btn-primary-bg-active;
+    }
+  }
   @for $btn from 20 through 50 {
     @if $btn % 2 == 0 {
       &.btn-#{$btn} {

@@ -1,5 +1,6 @@
 /* Fonts */
 $font-family-base:             'Open Sans', sans-serif;
+$font-family-second:           'Raleway', sans-serif;
 $font-size:                    15px;
 
 /* Animation */
@@ -11,6 +12,28 @@ $second-color:                 #ff5907;
 
 $text-color:                   #000;
 
+$border-color-header:          #E8E8E8;
+$border-color:                 #f1f1f1;
+
 /* Links */
 $link-color:                   #d93820;
 $link-hover-color:             #ff5907;
+
+$link-menu:                    #333333;
+$link-menu-line:               #F25E26;
+$link-submenu-color:           #f55e13;
+
+/* Buttons */
+$btn-default-bg:               #F8A432;
+$btn-default-bg-hover:         #FD7822;
+$btn-default-bg-active:        #E96F1F;
+
+$btn-primary-bg:               #EF6330;
+$btn-primary-bg-hover:         #FD3E1E;
+$btn-primary-bg-active:        #E4391A;
+
+/* z-index */
+$z-site-header:                9;
+$z-submenu:                    10;
+$z-icon-menu:                  11;
+$z-mobile-menu:                8;

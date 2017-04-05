@@ -2,7 +2,82 @@
   @include transition($transition);
 
   &-menu {
+    display: none;
 
+    @media (max-width: $screen-sm-max) {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 97px;
+      height: 97px;
+      border: 0;
+      background: #D73A2A;
+      text-align: center;
+      z-index: $z-icon-menu;
+
+      &.active {
+        .icon-bar-v {
+          @include opacity(1);
+          @include translate(0, 0);
+        }
+        .icon-bar-h {
+          @include opacity(0);
+          @include translate(100%, 0);
+        }
+      }
+      .icon-bar-v {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -10px 0 0 -15px;
+        @include transition($transition);
+        @include opacity(0);
+        @include translate(0, -100%);
+
+        .icon-bar {
+          width: 4px;
+          height: 30px;
+          display: inline-block;
+          margin: 0 3px 0 0;
+          background: #fff;
+          border-radius: 2px;
+
+          &:first-child {
+            height: 21px;
+            margin-bottom: 0;
+            position: relative;
+            top: -9px;
+          }
+        }
+      }
+      .icon-bar-h {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -10px 0 0 -15px;
+        @include transition($transition);
+        @include opacity(1);
+        @include translate(0, 0);
+
+        .icon-bar {
+          width: 30px;
+          height: 4px;
+          display: block;
+          margin: 0 auto 6px;
+          background: #fff;
+          border-radius: 2px;
+
+          &:last-child {
+            width: 21px;
+            margin-bottom: 0;
+            position: relative;
+            left: -4.5px;
+          }
+        }
+      }
+    }
   }
   &-cross {
     max-width: 20px;
@@ -12,6 +87,24 @@
 
     &:hover {
       color: $main-color;
+    }
+  }
+  &-fb {
+    max-width: 65px;
+    max-height: 65px;
+    color: #3B5998;
+
+    &:hover {
+      color: #2352B2;
+    }
+  }
+  &-vk {
+    max-width: 65px;
+    max-height: 65px;
+    color: #4D76A1;
+
+    &:hover {
+      color: #2576CB;
     }
   }
 }
