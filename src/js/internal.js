@@ -18,4 +18,6 @@
 
     @@include('./partials/_mobileMenu.js')
 
+    $('.select').styler();
+
 })(jQuery);

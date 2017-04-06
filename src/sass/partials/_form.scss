@@ -1,3 +1,17 @@
 .form {
+  &-group {
+    margin-bottom: 20px;
+  }
+  &-minimal {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid $border-minimal;
+    padding: 8px 0;
 
+    @include transition($transition);
+    @include placeholder {
+      font-size: 15px;
+      color: rgba(0,0,0,.5);
+    }
+  }
 }
