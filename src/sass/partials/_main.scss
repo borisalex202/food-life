@@ -23,6 +23,79 @@ body {
     box-sizing: content-box;
   }
 }
+.bg {
+  &-gray {
+    background: $bg-gray;
+  }
+}
+.content {
+  ol {
+    counter-reset: my-badass-counter;
+
+    > li {
+      line-height: 24px;
+      margin-bottom: 23px;
+
+      &:before {
+        content: counter(my-badass-counter)'.';
+	      counter-increment: my-badass-counter;
+        display: inline-block;
+        font-weight: 700;
+      }
+      ul {
+        list-style: none;
+        margin-top: 10px;
+
+        li {
+          margin-bottom: 0;
+          line-height: 24px;
+
+          &:before {
+            content: '-';
+            display: inline-block;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+    @media (max-width: $screen-sm-max) {
+      li {
+        font-size: 18px;
+        line-height: 28px;
+      }
+      > li {
+        ul {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  ul {
+    list-style: disc;
+
+    li {
+      margin-bottom: 20px;
+    }
+  }
+  h4 {
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .indent {
+    padding: 30px 0;
+  }
+  @media (max-width: $screen-sm-max) {
+    br {
+      display: none;
+    }
+    h4 {
+      font-size: 32px;
+    }
+    .indent {
+      padding: 25px 0;
+    }
+  }
+}
 @media (max-width: $screen-sm-max) {
   .container {
     padding-left: 18px;

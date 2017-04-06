@@ -16,6 +16,8 @@ $border-color-header:          #E8E8E8;
 $border-color:                 #f1f1f1;
 $border-minimal:               #bac3c6;
 
+$bg-gray:                      #EFF5F7;
+
 /* Links */
 $link-color:                   #d93820;
 $link-hover-color:             #ff5907;
@@ -35,6 +37,7 @@ $btn-primary-bg-active:        #E4391A;
 
 /* z-index */
 $z-site-header:                9;
+$z-site-footer:                9;
 $z-submenu:                    10;
 $z-icon-menu:                  11;
 $z-mobile-menu:                8;
