@@ -29,6 +29,26 @@ body {
   }
 }
 .content {
+  &-page {
+    padding: 75px 0;
+
+    @media (min-width: $screen-lg) {
+      &-left {
+        width: 30.5%;
+      }
+      &-right {
+        width: 69.5%;
+      }
+    }
+    @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+      &-left {
+        width: 37.5%;
+      }
+      &-right {
+        width: 62.5%;
+      }
+    }
+  }
   ol {
     counter-reset: my-badass-counter;
 
@@ -41,10 +61,40 @@ body {
 	      counter-increment: my-badass-counter;
         display: inline-block;
         font-weight: 700;
+        @include transition($transition);
+      }
+      @for $ol from 1 through 50 {
+        &:nth-child(#{$ol}) {
+          ol {
+            > li {
+              &:before {
+                content: '#{$ol}.'counter(my-badass-counter)'.';
+        	      counter-increment: my-badass-counter;
+                margin-right: 2px;
+              }
+            }
+          }
+        }
+      }
+      ol {
+        padding-left: 15px;
+        margin: 10px 0;
+        counter-reset: my-badass-counter;
+
+        > li {
+          margin-bottom: 15px;
+
+          &:before {
+            display: inline-block;
+            font-weight: 400;
+            @include transition($transition);
+          }
+        }
       }
       ul {
         list-style: none;
         margin-top: 10px;
+        padding-left: 0;
 
         li {
           margin-bottom: 0;
@@ -71,8 +121,34 @@ body {
     }
   }
   ul {
+    padding-left: 15px;
     list-style: disc;
 
+    &.docs {
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: 28px;
+
+        &:hover {
+          a,
+          .icon {
+            color: $link-hover-color;
+          }
+        }
+        a {
+          color: #000;
+          font-size: 18px;
+          line-height: 24px;
+        }
+        .icon {
+          position: absolute;
+          top: 1px;
+          left: 2px;
+        }
+      }
+    }
     li {
       margin-bottom: 20px;
     }
@@ -93,6 +169,52 @@ body {
     }
     .indent {
       padding: 25px 0;
+    }
+  }
+}
+.flex {
+  @include flexbox;
+  @include flex-wrap(wrap);
+}
+.mb {
+  @for $mb from 10 through 100 {
+    @if $mb % 5 == 0 {
+      &-#{$mb} {
+        margin-bottom: $mb#{'px'};
+
+        &-md {
+          @media screen and (min-width: $screen-md) {
+            margin-bottom: $mb#{'px'};
+          }
+        }
+        &-sm {
+          @media screen and (max-width: $screen-sm-max) {
+            margin-bottom: $mb#{'px'};
+          }
+        }
+        &-xs {
+          @media screen and (max-width: $screen-xs-max) {
+            margin-bottom: $mb#{'px'};
+          }
+        }
+      }
+    }
+  }
+  &-0 {
+    &-md {
+      @media screen and (min-width: $screen-md) {
+        margin-bottom: 0;
+      }
+    }
+    &-sm {
+      @media screen and (max-width: $screen-sm-max) {
+        margin-bottom: 0;
+      }
+    }
+    &-xs {
+      @media screen and (max-width: $screen-xs-max) {
+        margin-bottom: 0;
+      }
     }
   }
 }

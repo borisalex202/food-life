@@ -1,0 +1,84 @@
+@@include('templates/_head.html', {
+	"title": "Пища жизни - Отчёты"
+})
+@@include('templates/_header.html',{
+	"item": 3
+})
+
+		<div class="heading">
+			<div class="container">
+				<ul class="breadcrumbs">
+					<li><a href="index.html">Главная</a></li>
+					<li>Отчёты</li>
+				</ul>
+				<h1 class="heading-title">
+					Отчёты
+					<span class="heading-line">
+						<span class="heading-line-bar"></span>
+						<span class="heading-line-bar"></span>
+						<span class="heading-line-bar"></span>
+						<span class="heading-line-bar"></span>
+						<span class="heading-line-bar"></span>
+					</span>
+				</h1>
+				<p class="heading-description">Мы за прозрачную отчетность. Поэтому каждый может узнать о нашей финансовой деятельности</p>
+			</div>
+		</div>
+		<div class="bg-gray content content-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-xs-12 mb-50-sm">
+						<h4>Ежеквартальные</h4>
+						<ul class="docs">
+							<li>
+								<a href="#">
+									<svg class="icon icon-doc"><use xlink:href="#icon-doc"></use></svg>
+									Отчет о деятельности Ассоциации за сентябрь  2016 год
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<svg class="icon icon-doc"><use xlink:href="#icon-doc"></use></svg>
+									Отчет о деятельности Ассоциации 2 четверть 2015 года
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<svg class="icon icon-doc"><use xlink:href="#icon-doc"></use></svg>
+									Отчет о деятельности Ассоциации за сентябрь  2016 год
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 col-xs-12">
+						<h4>Ежегодные</h4>
+						<ul class="docs">
+							<li>
+								<a href="#">
+									<svg class="icon icon-doc"><use xlink:href="#icon-doc"></use></svg>
+									Отчет о деятельности Ассоциации за сентябрь  2016 год
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<svg class="icon icon-doc"><use xlink:href="#icon-doc"></use></svg>
+									Отчет о деятельности Ассоциации 2 четверть 2015 года
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<svg class="icon icon-doc"><use xlink:href="#icon-doc"></use></svg>
+									Отчет о деятельности Ассоциации за сентябрь  2016 год
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				@@include('templates/_report-list.html')
+			</div>
+		</div>
+
+@@include('templates/_modals.html')
+@@include('templates/_footer.html')
+@@include('templates/_end.html')

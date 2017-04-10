@@ -1,0 +1,95 @@
+.report {
+	&-list {
+		margin: 90px -15px 0;
+		@include flexbox;
+		@include flex-wrap(wrap);
+	}
+	&-item {
+		width: calc(33.3333% - 30px);
+		background: #fff;
+		margin: 0 15px 40px;
+		text-decoration: none;
+		padding: 50px 60px 50px 80px;
+		position: relative;
+		@include transition($transition);
+		@include box-shadow(0 27px 32px 0 rgba(209, 209, 209, .29));
+
+		&:hover {
+			background: #EF632F;
+
+			.title,
+			.description,
+			.icon {
+				color: #fff;
+			}
+		}
+		.icon {
+			position: absolute;
+			top: 50px;
+			left: 30px;
+
+			&-medal {
+				left: 37px;
+			}
+		}
+		.title {
+			text-decoration: underline;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 24px;
+			margin-bottom: 23px;
+			@include transition($transition);
+		}
+		.description {
+			line-height: 22px;
+			font-weight: 300;
+			margin-bottom: 0;
+			@include transition($transition);
+		}
+	}
+	@media (max-width: $screen-sm-max) {
+		&-item {
+			width: calc(100% - 30px);
+			padding: 50px 40px 50px 120px;
+
+			.title {
+				font-size: 28px;
+				margin-bottom: 15px;
+			}
+			.description {
+				font-size: 18px;
+				line-height: 28px;
+			}
+			.icon {
+				max-width: 59px;
+				max-height: 61px;
+			}
+		}
+	}
+	@media (max-width: $screen-xs-max) {
+		&-item {
+			width: calc(100% - 30px);
+			padding: 130px 50px 50px 50px;
+			text-align: center;
+
+			.title {
+				font-size: 28px;
+				line-height: 36px;
+				margin-bottom: 25px;
+			}
+			.description {
+				font-size: 18px;
+				line-height: 28px;
+			}
+			.icon {
+				position: absolute;
+				top: 40px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				max-width: 59px;
+				max-height: 61px;
+			}
+		}
+	}
+}

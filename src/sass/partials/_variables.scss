@@ -35,9 +35,15 @@ $btn-primary-bg:               #EF6330;
 $btn-primary-bg-hover:         #FD3E1E;
 $btn-primary-bg-active:        #E4391A;
 
+$btn-more-bg:               	 transparent;
+$btn-more-bg-hover:        		 #BFC6C8;
+$btn-more-bg-active:       		 #A8ADAF;
+$btn-more-border:        			 #BDC4C6;
+
 /* z-index */
 $z-site-header:                9;
 $z-site-footer:                9;
 $z-submenu:                    10;
 $z-icon-menu:                  11;
 $z-mobile-menu:                8;
+$z-heading:										 6;

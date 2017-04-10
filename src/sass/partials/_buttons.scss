@@ -33,6 +33,28 @@
       background: $btn-primary-bg-active;
     }
   }
+  &-more {
+    min-width: 215px;
+    background: $btn-more-bg;
+    border: 2px solid $btn-more-border;
+    color: rgba(0,0,0,.5);
+
+    &:hover {
+      border: 2px solid $btn-more-bg-hover;
+      background: $btn-more-bg-hover;
+      color: #000;
+    }
+    &:focus,
+    &:active,
+    &:active:hover {
+      border: 2px solid $btn-more-bg-active;
+      color: #000;
+      background: $btn-more-bg-active;
+    }
+    @media (max-width: $screen-xs) {
+      width: 100%;
+    }
+  }
   @for $btn from 20 through 50 {
     @if $btn % 2 == 0 {
       &.btn-#{$btn} {

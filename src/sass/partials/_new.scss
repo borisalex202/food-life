@@ -31,6 +31,32 @@
         }
       }
     }
+    &.big {
+      width: calc(66.6666% - 30px);
+
+      @media (min-width: $screen-md) {
+        padding-bottom: 0;
+        @include flexbox();
+
+        .new {
+          &-thumb {
+            width: 50%;
+          }
+          &-content {
+            width: 50%;
+            padding: 75px 40px 40px;
+          }
+          &-city {
+            left: calc(50% + 40px);
+            bottom: 30px;
+          }
+          &-date {
+            right: 40px;
+            bottom: 30px;
+          }
+        }
+      }
+    }
   }
   &-content {
     padding: 35px 20px 20px;
@@ -78,10 +104,18 @@
       @include transition($transition);
     }
   }
+  &-back {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
   @media (max-width: $screen-sm-max) {
     &-item {
       width: 100%;
       padding-bottom: 30px;
+
+      &.big {
+        width: 100%;
+      }
     }
     &-thumb {
       min-height: 400px;
@@ -116,6 +150,17 @@
     }
     &-title {
       margin-bottom: 15px;
+    }
+    &-city {
+      bottom: 15px;
+      left: 17px;
+    }
+    &-date {
+      bottom: 17px;
+      right: 17px;
+    }
+    &-back {
+      margin-bottom: 40px;
     }
   }
 }

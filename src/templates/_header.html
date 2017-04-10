@@ -1,12 +1,12 @@
             <div class="mobile-menu">
                 <ul class="menu">
-                    <li class="has-child active">
+                    <li class="has-child">
                         <a href="#">Об Ассоциации</a>
                         <ul class="submenu">
                             <li><a href="history.html">История</a></li>
                             <li><a href="goals.html">Цели и задачи</a></li>
                             <li><a href="standards.html">Стандарты работы</a></li>
-                            <li><a href="#">Соглашения</a></li>
+                            <li><a href="agreement.html">Соглашение</a></li>
                         </ul>
                     </li>
                     <li class="has-child">
@@ -15,11 +15,11 @@
                             <li><a href="history.html">История</a></li>
                             <li><a href="goals.html">Цели и задачи</a></li>
                             <li><a href="standards.html">Стандарты работы</a></li>
-                            <li><a href="#">Соглашения</a></li>
+                            <li><a href="agreement.html">Соглашение</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Отчеты</a></li>
-                    <li><a href="#">Новости</a></li>
+                    <li><a href="reports.html">Отчеты</a></li>
+                    <li><a href="news.html">Новости</a></li>
                     <li><a href="#">Галерея</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
@@ -48,28 +48,28 @@
                         <span class="name">Пища Жизни</span>
                     </a>
                     <ul class="main-menu">
-                        <li class="has-child active">
+                        <li class="has-child @@if(context.item === 1){active}">
                             <a href="#">Об Ассоциации</a>
                             <ul class="submenu">
                                 <li><a href="history.html">История</a></li>
                                 <li><a href="goals.html">Цели и задачи</a></li>
                                 <li><a href="standards.html">Стандарты работы</a></li>
-                                <li><a href="#">Соглашения</a></li>
+                                <li><a href="agreement.html">Соглашение</a></li>
                             </ul>
                         </li>
-                        <li class="has-child">
+                        <li class="has-child @@if(context.item === 2){active}">
                             <a href="#">Города-участники</a>
                             <ul class="submenu">
                                 <li><a href="history.html">История</a></li>
                                 <li><a href="goals.html">Цели и задачи</a></li>
                                 <li><a href="standards.html">Стандарты работы</a></li>
-                                <li><a href="#">Соглашения</a></li>
+                                <li><a href="agreement.html">Соглашение</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Отчеты</a></li>
-                        <li><a href="#">Новости</a></li>
-                        <li><a href="#">Галерея</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li@@if(context.item === 3){ class="active"}><a href="reports.html">Отчеты</a></li>
+                        <li@@if(context.item === 4){ class="active"}><a href="news.html">Новости</a></li>
+                        <li@@if(context.item === 5){ class="active"}><a href="#">Галерея</a></li>
+                        <li@@if(context.item === 6){ class="active"}><a href="#">Контакты</a></li>
                     </ul>
                     <button type="button" class="btn btn-default help">Помочь сейчас</button>
                 </div>

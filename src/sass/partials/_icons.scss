@@ -107,4 +107,20 @@
       color: #2576CB;
     }
   }
+  &-doc {
+    max-width: 15px;
+    max-height: 19px;
+    color: #000;
+  }
+  &-clock,
+  &-form {
+    max-width: 31px;
+    max-height: 32px;
+    color: #B2B2B2;
+  }
+  &-medal {
+    max-width: 24px;
+    max-height: 36px;
+    color: #B2B2B2;
+  }
 }
