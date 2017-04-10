@@ -17,6 +17,7 @@
     "jquery": "2.1.*",
     "html5shiv": "*",
     "bootstrap-sass": "3.*",
-    "jquery.form-styler": "jquery-form-styler#^1.7.8"
+    "jquery.form-styler": "jquery-form-styler#^1.7.8",
+    "jssocials": "^1.4.0"
   }
 }
