@@ -1,0 +1,120 @@
+@@if ( context.modal_video === 'true') {
+<div class="modal fade gallery-popup" id="modal_video" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+		  <button type="button" class="modal-close" data-dismiss="modal"></button>
+      <div class="modal-body">
+				<div class="youtube-block">
+					<div class="youtube-image" style="background-image: url('img/img1.jpg');"></div>
+					<span class="youtube-icon"></span>
+					<p class="youtube-title"></p>
+					<iframe id="yvideo" width="560" height="360" src="https://www.youtube.com/embed/GQGQ-MYaIAc?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<script type="text/javascript">
+					var tag = document.createElement('script');
+
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+					var player;
+					function onYouTubeIframeAPIReady() {
+						player = new YT.Player('yvideo');
+					}
+
+					$('.youtube-icon').on('click', function(){
+						$(this).parent().addClass('play');
+						player.playVideo();
+					});
+					$('#modal_video').on('show.bs.modal', function (event) {
+					  var button = $(event.relatedTarget),
+                modal = $(this),
+								videoSrc = button.data('video'),
+                videoTitle = button.data('title'),
+                videoImage = button.data('image');
+
+					  modal.find('iframe').attr('src', videoSrc + '?enablejsapi=1');
+            modal.find('.youtube-title').text(videoTitle);
+            modal.find('.youtube-image').css({
+              backgroundImage: 'url("'+videoImage+'")'
+            });
+					});
+					$('#modal_video').on('hide.bs.modal', function (event) {
+						$('.youtube-block').removeClass('play');
+						player.pauseVideo();
+					});
+				</script>
+      </div>
+    </div>
+  </div>
+</div>
+}
+@@if ( context.modal_photo === 'true') {
+<div class="modal fade gallery-popup" id="modal_photo" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+		  <button type="button" class="modal-close" data-dismiss="modal"></button>
+      <div class="modal-body">
+        <div class="slider-gallery-main">
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+        </div>
+        <div class="slider-gallery-nav">
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/gallery4.jpg" alt="">
+          </div>
+        </div>
+				<script type="text/javascript">
+          $('#modal_photo').on('show.bs.modal', function () {
+            setTimeout(function(){
+              $('.slider-gallery-main, .slider-gallery-nav').slick('setPosition');
+            }, 300);
+          });
+				</script>
+      </div>
+    </div>
+  </div>
+</div>
+}

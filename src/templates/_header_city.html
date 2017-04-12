@@ -29,7 +29,7 @@
                     <li><a href="#"><svg class="icon icon-vk"><use xlink:href="#icon-vk"></use></svg></a></li>
                 </ul>
             </div>
-            <header class="site-header">
+            <header class="site-header with-city">
                 <div class="container">
                     <button class="icon-menu">
                         <div class="icon-bar-v">
@@ -47,29 +47,36 @@
                         <span class="slogan">Ассоциация благотворительных фондов</span>
                         <span class="name">Пища Жизни</span>
                     </a>
+                    <div class="city-choice">
+                      <span class="title">Ваш город:</span>
+                      <a href="#" class="city-current"><span>Санкт-Петербург</span></a>
+                      <ul class="city-list">
+                        <li><a href="#">Абакан</a></li>
+                        <li><a href="#">Азов</a></li>
+                        <li><a href="#">Александров</a></li>
+                        <li><a href="#">Алексин</a></li>
+                        <li><a href="#">Альметьевск</a></li>
+                        <li><a href="#">Анапа</a></li>
+                        <li><a href="#">Ангарск</a></li>
+                        <li><a href="#">Балашиха</a></li>
+                        <li><a href="#">Балашиха</a></li>
+                        <li><a href="#">Барнаул</a></li>
+                        <li><a href="#">Бишкек</a></li>
+                        <li><a href="#">Воронеж</a></li>
+                        <li><a href="#">Балашиха</a></li>
+                        <li><a href="#">Барнаул</a></li>
+                        <li><a href="#">Балашиха</a></li>
+                        <li><a href="#">Барнаул</a></li>
+                        <li><a href="#">Бишкек</a></li>
+                        <li><a href="#">Воронеж</a></li>
+                      </ul>
+                    </div>
                     <ul class="main-menu">
-                        <li class="has-child @@if(context.item === 1){active}">
-                            <a href="#">Об Ассоциации</a>
-                            <ul class="submenu">
-                                <li><a href="history.html">История</a></li>
-                                <li><a href="goals.html">Цели и задачи</a></li>
-                                <li><a href="standards.html">Стандарты работы</a></li>
-                                <li><a href="agreement.html">Соглашение</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-child @@if(context.item === 2){active}">
-                            <a href="#">Города-участники</a>
-                            <ul class="submenu">
-                                <li><a href="history.html">История</a></li>
-                                <li><a href="goals.html">Цели и задачи</a></li>
-                                <li><a href="standards.html">Стандарты работы</a></li>
-                                <li><a href="agreement.html">Соглашение</a></li>
-                            </ul>
-                        </li>
-                        <li@@if(context.item === 3){ class="active"}><a href="reports.html">Отчеты</a></li>
-                        <li@@if(context.item === 4){ class="active"}><a href="news.html">Новости</a></li>
-                        <li@@if(context.item === 5){ class="active"}><a href="gallery.html">Галерея</a></li>
-                        <li@@if(context.item === 6){ class="active"}><a href="contacts.html">Контакты</a></li>
+                        <li@@if(context.item === 1){ class="active"}><a href="projects.html">Проекты</a></li>
+                        <li@@if(context.item === 2){ class="active"}><a href="#">Волонтерам</a></li>
+                        <li@@if(context.item === 3){ class="active"}><a href="news.html">Новости</a></li>
+                        <li@@if(context.item === 4){ class="active"}><a href="#">О фонде</a></li>
+                        <li@@if(context.item === 5){ class="active"}><a href="contacts.html">Контакты</a></li>
                     </ul>
                     <button type="button" class="btn btn-default help">Помочь сейчас</button>
                 </div>

@@ -1,0 +1,209 @@
+.gallery {
+	&-container {
+		margin: 0 -15px;
+		// @include flexbox();
+		// @include flex-wrap(wrap);
+
+		&:before,
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+	&-vertical {
+		height: 540px;
+		width: 33.3333%;
+		@include inline-flex();
+		@include flex-wrap(wrap);
+
+		.gallery-item {
+			width: 100%;
+		}
+		@media (max-width: $screen-sm-max) {
+			width: 100%;
+			height: 285px;
+
+			.gallery-item {
+				width: calc(50% - 30px);
+			}
+		}
+		@media (max-width: $screen-xs-max) {
+			.gallery-item {
+				width: calc(100% - 30px);
+			}
+		}
+	}
+	&-item {
+		width: calc(33.3333% - 30.5px);
+		margin: 0 15px 30px;
+		cursor: pointer;
+		text-decoration: none;
+		color: #fff;
+		position: relative;
+		height: 255px;
+		float: left;
+		@include inline-flex();
+		@include align-items(flex-end);
+		@include transition($transition);
+
+		&.big {
+			height: 540px;
+			width: calc(66.6666% - 30px);
+
+			@media (max-width: $screen-sm-max) {
+				width: calc(100% - 30px);
+			}
+			@media (max-width: $screen-xs-max) {
+				height: 255px;
+			}
+		}
+		&.clear-left {
+			clear: left;
+
+			+ .gallery-item {
+				margin-top: -285px;
+			}
+			@media (max-width: $screen-sm-max) {
+				clear: none;
+
+				+ .gallery-item {
+					margin-top: 0;
+				}
+			}
+		}
+		&.video {
+			position: relative;
+			background: #1e1e1e;
+			@include align-items(center);
+			@include justify-content(center);
+
+			&:hover {
+				background: #f16222;
+				text-decoration: none;
+
+				.gallery {
+					&-thumb {
+						@include opacity(.3);
+					}
+				}
+			}
+			&:focus {
+				text-decoration: none;
+			}
+			.gallery {
+				&-thumb {
+					@include opacity(.45);
+				}
+				&-info {
+					&:before {
+						content: '';
+						display: block;
+						width: 56px;
+						height: 56px;
+						margin: 0 auto 30px;
+						background: url('../img/svg/play.svg') center no-repeat;
+				    background-size: 56px;
+					}
+				}
+				&-title {
+					text-align: center;
+				}
+			}
+		}
+		&.photo {
+			position: relative;
+			background: #1e1e1e;
+
+			&:hover {
+				background: #f16222;
+				text-decoration: none;
+
+				&:after {
+					@include opacity(0);
+				}
+				.gallery {
+					&-thumb {
+						@include opacity(.3);
+					}
+				}
+			}
+			&:focus {
+				text-decoration: none;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				top: 30px;
+				left: 35px;
+				width: 30px;
+				height: 24px;
+				background: url('../img/svg/photo.svg') no-repeat;
+				background-size: 30px 24px;
+				z-index: 8;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 35%;
+				z-index: 5;
+
+				background: rgba(30,30,30,0);
+				background: -moz-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+				background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(30,30,30,0)), color-stop(100%, rgba(30,30,30,1)));
+				background: -webkit-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+				background: -o-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+				background: -ms-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+				background: linear-gradient(to bottom, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e1e', endColorstr='#1e1e1e', GradientType=0 );
+				@include transition($transition);
+			}
+		}
+		@media (max-width: $screen-sm-max) {
+			width: calc(50% - 30.5px);
+		}
+		@media (max-width: $screen-xs-max) {
+			width: calc(100% - 30.5px);
+		}
+	}
+	&-thumb {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+		background-position: center top !important;
+		@include transition($transition);
+		@include opacity(.65);
+	}
+	&-info {
+		position: relative;
+		z-index: 6;
+		padding: 30px 35px;
+	}
+	&-count {
+		color: #fff;
+		font-size: 14px;
+		display: inline-block;
+		margin-bottom: 10px;
+
+		@media (max-width: $screen-xs-max) {
+			font-size: 15px;
+		}
+	}
+	&-title {
+		font-size: 18px;
+		line-height: 28px;
+		font-weight: 700;
+		color: #fff;
+		margin-bottom: 0;
+		max-height: 84px;
+		overflow: hidden;
+	}
+}
