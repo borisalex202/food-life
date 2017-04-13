@@ -7,7 +7,8 @@
   &-item {
     display: block;
     width: calc(33.3333% - 30px);
-    margin: 0 15px 40px;
+    margin-left: 15px;
+    margin-right: 15px;
     background: #fff;
     cursor: pointer;
     text-decoration: none;
@@ -19,6 +20,9 @@
     * {
       @include transition($transition);
     }
+    &:not(:nth-child(-n+3)) {
+			margin-top: 40px;
+		}
     &:hover {
       .new {
         &-title {
@@ -150,6 +154,9 @@
             max-width: 100%;
           }
         }
+        &-desc {
+          margin-bottom: 15px;
+        }
         &-back {
           font-size: 13px;
           margin-bottom: 20px;
@@ -170,6 +177,12 @@
       width: 100%;
       padding-bottom: 30px;
 
+      &:not(:nth-child(-n+3)) {
+  			margin-top: 0;
+  		}
+      &:not(:first-child) {
+  			margin-top: 40px;
+  		}
       &.big {
         width: 100%;
       }

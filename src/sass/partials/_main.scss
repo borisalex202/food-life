@@ -32,6 +32,9 @@ body {
   &-page {
     padding: 75px 0;
 
+    &.no-pt {
+      padding-top: 0;
+    }
     @media (min-width: $screen-lg) {
       &-left {
         width: 30.5%;

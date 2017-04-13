@@ -61,7 +61,7 @@
 
     elements.select.styler();
 
-    elements.agreement.find('a[href*="#"]:not([href="#"])').click(function() {
+    $('.agreement a[href*="#"]:not([href="#"]), .smooth-scoll').on('click', function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

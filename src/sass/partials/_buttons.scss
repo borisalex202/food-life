@@ -5,6 +5,8 @@
   min-width: 165px;
   border: 0;
   border-radius: 20px;
+  text-decoration: none !important;
+  cursor: pointer;
   @include transition($transition);
 
   &-default {
@@ -13,11 +15,13 @@
 
     &:hover {
       background: $btn-default-bg-hover;
+      color: #fff;
     }
     &:focus,
     &:active,
     &:active:hover {
       background: $btn-default-bg-active;
+      color: #fff;
     }
   }
   &-primary {
@@ -26,11 +30,13 @@
 
     &:hover {
       background: $btn-primary-bg-hover;
+      color: #fff;
     }
     &:focus,
     &:active,
     &:active:hover {
       background: $btn-primary-bg-active;
+      color: #fff;
     }
   }
   &-more {
