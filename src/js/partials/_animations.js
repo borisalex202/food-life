@@ -1,12 +1,16 @@
+var showItems = 0;
+
 $(window).on('load resize', function() {
-    elements.volunteerItem.removeClass('volunteer-hide').attr('style', '');
+    showItems = 0;
+    elements.showAnimateItems.text('Показать всех');
+    elements.animateBlock.find(elements.animateItem).removeClass('animate-hide').attr('style', '');
     if($(document).width() > grid.md) {
         var count = 1;
-        elements.volunteerItem.each(function () {
+        elements.animateBlock.find(elements.animateItem).each(function () {
             if (count > 4) {
                 var itemHeight = $(this).outerHeight();
 
-                $(this).addClass('volunteer-hide').data('height', itemHeight).height(0).css({
+                $(this).addClass('animate-hide').data('height', itemHeight).height(0).css({
                     marginTop: 0,
                     opacity: 0
                 });
@@ -16,11 +20,11 @@ $(window).on('load resize', function() {
     }
     if($(document).width() > grid.sm && $(document).width() < grid.md) {
         var count = 1;
-        elements.volunteerItem.each(function () {
+        elements.animateBlock.find(elements.animateItem).each(function () {
             if (count > 2) {
                 var itemHeight = $(this).outerHeight();
 
-                $(this).addClass('volunteer-hide').data('height', itemHeight).height(0).css({
+                $(this).addClass('animate-hide').data('height', itemHeight).height(0).css({
                     marginTop: 0,
                     opacity: 0
                 });
@@ -30,11 +34,11 @@ $(window).on('load resize', function() {
     }
     if($(document).width() > 0 && $(document).width() < grid.sm) {
         var count = 1;
-        elements.volunteerItem.each(function () {
+        elements.animateBlock.find(elements.animateItem).each(function () {
             if (count > 1) {
                 var itemHeight = $(this).outerHeight();
 
-                $(this).addClass('volunteer-hide').data('height', itemHeight).height(0).css({
+                $(this).addClass('animate-hide').data('height', itemHeight).height(0).css({
                     marginTop: 0,
                     opacity: 0
                 });
@@ -43,15 +47,14 @@ $(window).on('load resize', function() {
         });
     }
 });
-var showItems = 0;
-$('.show-volunteer').on('click', function () {
+elements.showAnimateItems.on('click', function () {
     $(this).text(function(i, text){
-        return text === "Показать всех" ? "Скрыть часть" : "Показать всех";
+        return text === "Показать всех" ? "Свернуть" : "Показать всех";
     });
 
     if(showItems == 1) {
 
-        $('.volunteer-hide').each(function () {
+        $('.animate-hide').each(function () {
             $(this).animate({
                 height: 0,
                 marginTop: 0,
@@ -61,7 +64,7 @@ $('.show-volunteer').on('click', function () {
         showItems = 0;
     } else {
 
-        $('.volunteer-hide').each(function () {
+        $('.animate-hide').each(function () {
             var itemHeight = $(this).data('height');
 
 

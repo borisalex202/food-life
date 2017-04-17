@@ -22,7 +22,11 @@
         cityCurrent: $('.city-current'),
         arrowLeft: '<button type="button" class="slick-arrow slick-prev"><svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg></button>',
         arrowRight: '<button type="button" class="slick-arrow slick-next"><svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></button>',
-        volunteerItem: $('.volunteer-item')
+        volunteerItem: $('.volunteer-item'),
+        animateBlock: $('.animate-block'),
+        animateItem: $('.animate-item'),
+        showAnimateItems: $('.show-items'),
+        slickArrowHead: $('.slick-arrow-head')
     };
     var options = {
         headerHeight: elements.siteHeader.outerHeight(),
@@ -32,7 +36,7 @@
     @@include('./partials/_mobileMenu.js')
     @@include('./partials/_galleryGrid.js')
     @@include('./partials/_sliders.js')
-    @@include('./partials/_volunteers.js')
+    @@include('./partials/_animations.js')
 
     $(window).on('load resize', function(){
       if($(document).width() > grid.md) {
@@ -119,5 +123,21 @@
   					el.removeClass('active');
   		}
   	});
+
+    var showLetter = 0;
+    $('.letter-description p:hidden').addClass('letter-hide');
+    $('.letter-more').on('click', function (e) {
+        e.preventDefault();
+        $(this).text(function(i, text){
+            return text === "Читать полностью" ? "Свернуть" : "Читать полностью";
+        });
+        if(showLetter == 0) {
+            $(this).parent().find('.letter-hide').slideDown();
+            showLetter = 1;
+        } else {
+            $(this).parent().find('.letter-hide').slideUp();
+            showLetter = 0;
+        }
+    });
 
 })(jQuery);

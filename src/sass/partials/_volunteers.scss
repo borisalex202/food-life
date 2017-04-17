@@ -137,6 +137,19 @@
 			}
 		}
 	}
+	&-contacts {
+		line-height: 32px;
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: #000;
+
+			&:hover {
+				color: $link-hover-color;
+			}
+		}
+	}
 	@media (max-width: $screen-sm-max) {
 		&-item {
 			width: calc(50% - 30px);

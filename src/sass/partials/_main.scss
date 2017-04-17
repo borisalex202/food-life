@@ -199,7 +199,7 @@ body {
   @include flex-wrap(wrap);
 }
 .mb {
-  @for $mb from 10 through 100 {
+  @for $mb from 10 through 150 {
     @if $mb % 5 == 0 {
       &-#{$mb} {
         margin-bottom: $mb#{'px'};

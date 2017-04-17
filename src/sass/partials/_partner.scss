@@ -8,9 +8,11 @@
 		text-decoration: none;
 		text-align: center;
 		width: calc(25% - 30px);
+		padding: 3px;
 		margin-left: 15px;
 		margin-right: 15px;
 		position: relative;
+		overflow: hidden;
 
 		&:not(:nth-child(-n+4)) {
 			margin-top: 65px;
@@ -22,7 +24,7 @@
 			left: -3px;
 			right: -3px;
 			bottom: -3px;
-			height: 191px;
+			height: 194px;
 			border-radius: 3px;
 			pointer-events: none;
 			z-index: 4;
@@ -71,13 +73,18 @@
 			width: calc(50% - 30px);
 
 			&:before {
-				height: 231px;
+				height: 234px;
 			}
 			&:not(:nth-child(-n+4)) {
 				margin-top: 0;
 			}
 			&:not(:nth-child(-n+2)) {
 				margin-top: 65px;
+			}
+			&:hover {
+				.partner-thumb {
+					border: 1px solid transparent;
+				}
 			}
 		}
 		&-thumb {

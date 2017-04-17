@@ -33,11 +33,23 @@ $('.slider-gallery-nav').slick({
     }
   ]
 });
-$('.slider-volunteer-history').slick({
+$('.slider-volunteer-history, .slider-letters').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     fade: true,
 	prevArrow: elements.arrowLeft,
 	nextArrow: elements.arrowRight
+});
+
+$(window).on('load resize', function() {
+	if($(document).width() > grid.sm) {
+        var widthTitle = elements.slickArrowHead.find('h2 span').width() + 50;
+
+        elements.slickArrowHead.find('.slick-prev').css('left', widthTitle);
+        elements.slickArrowHead.find('.slick-next').css('left', widthTitle + 30);
+    } else {
+        elements.slickArrowHead.find('.slick-prev').css('left', '50%');
+        elements.slickArrowHead.find('.slick-next').css('left', '50%');
+	}
 });

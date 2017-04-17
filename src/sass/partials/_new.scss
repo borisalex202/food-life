@@ -21,8 +21,8 @@
       @include transition($transition);
     }
     &:not(:nth-child(-n+3)) {
-			margin-top: 40px;
-		}
+        margin-top: 40px;
+    }
     &:hover {
       .new {
         &-title {
@@ -88,6 +88,15 @@
       }
       @media (max-width: $screen-sm-max) {
         background: #fff;
+      }
+    }
+    &.smi {
+      .new {
+        &-thumb {
+          min-height: 100px;
+          background-position: 20px center;
+          background-size: auto;
+        }
       }
     }
   }
