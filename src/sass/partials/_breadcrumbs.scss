@@ -1,5 +1,6 @@
 .breadcrumbs {
   margin-bottom: 30px;
+  padding: 0 !important;
 
   li {
     display: inline-block;
@@ -20,11 +21,35 @@
         display: none;
       }
     }
+    &.back {
+      display: none;
+    }
+    &.no-line {
+      &:after {
+        display: none;
+      }
+    }
     a {
       font-size: 13px;
     }
   }
   @media (max-width: $screen-sm-max) {
     display: none;
+
+    &.with-back {
+      display: block;
+
+      li {
+        display: none;
+
+        &.back {
+          display: block;
+
+          a {
+            font-size: 18px;
+          }
+        }
+      }
+    }
   }
 }

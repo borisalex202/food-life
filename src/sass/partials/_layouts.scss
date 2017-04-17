@@ -264,6 +264,8 @@
     color: #464646;
     position: relative;
     top: 1px;
+    padding-left: 1px;
+    letter-spacing: .17px;
     font-family: $font-family-second;
   }
   .name {
@@ -765,9 +767,18 @@
         height: 56px;
         z-index: -1;
         background: url('../img/blot-gray-4.png') no-repeat;
+      }
+      @media (max-width: $screen-xs-max) {
+        white-space: normal;
+        max-width: 300px;
+        display: block;
+        margin: 0 auto;
 
-        @media (max-width: $screen-xs-max) {
-          left: -39px;
+        &:before {
+          left: 10px;
+          width: 270px;
+          height: 91px;
+          background: url('../img/blot-gray-4-mobile.png') no-repeat;
         }
       }
     }
@@ -1920,6 +1931,13 @@
 .load-more {
   text-align: center;
   margin-top: 40px;
+
+  @media (max-width: $screen-sm-max) {
+    .btn {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
 }
 .advantages {
   text-align: center;
@@ -1949,21 +1967,18 @@
     border-radius: 28px;
     margin-top: 20px;
   }
-}
-.volunteer {
-  &s {
-    h2 {
-      margin-bottom: 30px;
+  @media (max-width: $screen-sm-max) {
+    .item {
+      display: inline-block;
+      width: 49%;
     }
-    p {
-      font-size: 18px;
-      line-height: 27px;
-      margin-bottom: 30px;
+    .btn {
+      font-weight: 400;
     }
-    .gosha {
-      background: url('../img/gosha.png') left center no-repeat;
-      background-size: contain;
-      padding-left: 134px;
+  }
+  @media (max-width: $screen-xs-max) {
+    .item {
+      width: 100%;
     }
   }
 }

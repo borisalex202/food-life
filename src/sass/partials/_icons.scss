@@ -123,4 +123,16 @@
     max-height: 36px;
     color: #B2B2B2;
   }
+  &-arrow {
+    &-left,
+    &-right {
+      max-width: 11px;
+      max-height: 19px;
+      color: #000;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
 }

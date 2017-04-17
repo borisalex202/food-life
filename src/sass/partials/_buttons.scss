@@ -7,6 +7,7 @@
   border-radius: 20px;
   text-decoration: none !important;
   cursor: pointer;
+  width: auto;
   @include transition($transition);
 
   &-default {

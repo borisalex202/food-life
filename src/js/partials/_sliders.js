@@ -18,18 +18,26 @@ $('.slider-gallery-nav').slick({
       settings: {
         slidesToShow: 4,
         slidesToScroll: 1,
-				centerMode: true,
-				focusOnSelect: true
+		centerMode: true,
+		focusOnSelect: true
       }
     },
 		{
       breakpoint: 450,
       settings: {
         slidesToShow: 2,
-				slidesToScroll: 1,
-				centerMode: true,
-				focusOnSelect: true
+		slidesToScroll: 1,
+		centerMode: true,
+		focusOnSelect: true
       }
     }
   ]
+});
+$('.slider-volunteer-history').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+	prevArrow: elements.arrowLeft,
+	nextArrow: elements.arrowRight
 });
