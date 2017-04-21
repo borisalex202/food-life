@@ -1,0 +1,136 @@
+@@include('templates/_head.html', {
+"title": "Пища жизни - Города-участники"
+})
+@@include('templates/_header.html',{
+"item": 2
+})
+
+<div class="heading no-shadow">
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li><a href="index.html">Главная</a></li>
+            <li>Города-участники</li>
+        </ul>
+        <h1 class="heading-title">
+            Города-участники
+            <span class="heading-line">
+                <span class="heading-line-bar"></span>
+                <span class="heading-line-bar"></span>
+                <span class="heading-line-bar"></span>
+                <span class="heading-line-bar"></span>
+                <span class="heading-line-bar"></span>
+            </span>
+        </h1>
+    </div>
+</div>
+<div class="city-search">
+    <div class="container">
+        <div class="search">
+            <input type="search" class="search-input" placeholder="Введите название города">
+            <button type="button" class="search-icon"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></button>
+        </div>
+        <div class="show">
+            <span>Показать: </span>
+            <a href="#" class="city-link active">Списком</a>
+            <a href="#city_map" class="city-link">На карте</a>
+        </div>
+    </div>
+</div>
+<div class="bg-gray content content-page city-main">
+    <div class="container">
+        <div class="city-tab city-container">
+            <div class="city-block">
+                <span class="city-char">А</span>
+                <ul class="city-items">
+                    <li><a href="#">Абакан</a></li>
+                    <li><a href="#">Азов</a></li>
+                    <li><a href="#">Александров</a></li>
+                    <li><a href="#">Алексин</a></li>
+                    <li><a href="#">Альметьевск</a></li>
+                    <li><a href="#">Анапа</a></li>
+                    <li><a href="#">Ангарск</a></li>
+                </ul>
+            </div>
+            <div class="city-block">
+                <span class="city-char">Б</span>
+                <ul class="city-items">
+                    <li><a href="#">Балашиха</a></li>
+                    <li><a href="#">Барнаул</a></li>
+                    <li><a href="#">Бишкек</a></li>
+                </ul>
+            </div>
+            <div class="city-block">
+                <span class="city-char">В</span>
+                <ul class="city-items">
+                    <li><a href="#">Воронеж</a></li>
+                    <li><a href="#">Воложин</a></li>
+                </ul>
+            </div>
+            <div class="city-block">
+                <span class="city-char">М</span>
+                <ul class="city-items">
+                    <li><a href="#">Мелеуз</a></li>
+                    <li><a href="#">Миасс</a></li>
+                    <li><a href="#">Минеральные Воды</a></li>
+                    <li><a href="#">Минусинск</a></li>
+                    <li><a href="#">Михайловка</a></li>
+                    <li><a href="#">Михайловск</a></li>
+                    <li><a href="#">Мичуринск</a></li>
+                </ul>
+            </div>
+            <div class="city-block">
+                <span class="city-char">У</span>
+                <ul class="city-items">
+                    <li><a href="#">Ульяновск</a></li>
+                    <li><a href="#">Урус-Мартан</a></li>
+                    <li><a href="#">Усолье-Сибирское</a></li>
+                    <li><a href="#">Уссурийск</a></li>
+                    <li><a href="#">Усть-Илимск</a></li>
+                    <li><a href="#">Уфа</a></li>
+                </ul>
+            </div>
+            <div class="city-block">
+                <span class="city-char">Х</span>
+                <ul class="city-items">
+                    <li><a href="#">Хабаровск</a></li>
+                    <li><a href="#">Ханты-Мансийск</a></li>
+                    <li><a href="#">Хасавюрт</a></li>
+                    <li><a href="#">Химки</a></li>
+                </ul>
+            </div>
+            <div class="city-block">
+                <span class="city-char">Ч</span>
+                <ul class="city-items">
+                    <li><a href="#">Черногорск</a></li>
+                    <li><a href="#">Чехов</a></li>
+                    <li><a href="#">Чистополь</a></li>
+                    <li><a href="#">Чита</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="city_map" class="city-tab city-map">
+        <div id="map"></div>
+        <div class="container">
+            <div class="city-map-choice">
+                <h6>Интересующий город:</h6>
+                <div class="from-group">
+                    <select id="cityMapChoice" class="select select-minimal" data-placeholder="Выберите город">
+                        <option value=""></option>
+                        <option value="Москва" data-map-position="55.7545941,37.5818564" selected>Москва</option>
+                        <option value="Санкт-Петербург" data-map-position="59.9348303,30.3079943">Санкт-Петербург</option>
+                        <option value="Казань" data-map-position="55.819992,49.0303767">Казань</option>
+                    </select>
+                </div>
+
+                <div class="city-markers scroll-pane">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('templates/_footer.html')
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIfMx0nIiIGL1ZR1xqQm1Br8DN665cfN8&callback" async defer></script>
+<script src="js/map.js" type="text/javascript"></script>
+@@include('templates/_end.html')

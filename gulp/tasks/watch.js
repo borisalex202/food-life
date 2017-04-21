@@ -16,6 +16,9 @@ gulp.task('watch', function(){
     watch([config.watch.sassExternal], function(event, cb) {
         gulp.start('sass-external');
     });
+    watch(config.watch.jsAll, function(event, cb) {
+        gulp.start('js-all');
+    });
     watch(config.watch.jsInternal, function(event, cb) {
         gulp.start('js-internal');
     });

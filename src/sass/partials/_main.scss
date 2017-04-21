@@ -57,6 +57,12 @@ body {
       font-weight: 600;
     }
   }
+  .select {
+    ul {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+  }
   ol {
     margin-bottom: 30px;
     counter-reset: my-badass-counter;

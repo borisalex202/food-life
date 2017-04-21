@@ -68,6 +68,16 @@
 	&-link {
 		color: #959595;
 	}
+	&-items {
+		padding: 45px 0 60px;
+
+		.link {
+			font-size: 18px;
+			font-weight: 800;
+			color: $main-color;
+			margin-bottom: 10px;
+		}
+	}
 	@media (max-width: $screen-sm-max) {
 		&-item {
 			width: calc(50% - 30px);

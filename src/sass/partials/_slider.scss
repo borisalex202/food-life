@@ -241,4 +241,318 @@
 			}
 		}
 	}
+	&-city {
+		&-main {
+			width: calc(100% - 340px);
+
+			.item {
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					height: 35%;
+					z-index: 5;
+
+					background: rgba(30,30,30,0);
+					background: -moz-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+					background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(30,30,30,0)), color-stop(100%, rgba(30,30,30,1)));
+					background: -webkit-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+					background: -o-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+					background: -ms-linear-gradient(top, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+					background: linear-gradient(to bottom, rgba(30,30,30,0) 0%, rgba(30,30,30,1) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e1e', endColorstr='#1e1e1e', GradientType=0 );
+					@include transition($transition);
+
+				}
+			}
+			.description {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 6;
+				padding: 0 30px 40px;
+				@include flexbox();
+				@include align-items(flex-start);
+
+				p {
+					color: #fff;
+					font-size: 20px;
+					line-height: 28px;
+				}
+				.btn {
+					text-align: center;
+				}
+			}
+			@media (max-width: $screen-md-max) {
+				width: 100%;
+
+				.item {
+					img {
+						width: 100%;
+					}
+				}
+				.description {
+
+				}
+			}
+		}
+		&-nav {
+			max-width: 340px;
+			width: 100%;
+			background: #e9f0f3;
+			border-radius: 8px 0 0 8px;
+
+			.slick {
+				&-arrow {
+					position: absolute;
+					bottom: 15px;
+					z-index: 2;
+				}
+				&-prev {
+					left: 50%;
+					margin-left: -25px;
+					border: 0;
+					padding: 0;
+					background: transparent;
+					border-right: 7px solid #5a6a71;
+					border-top: 5px solid transparent;
+					border-bottom: 5px solid transparent;
+					font-size: 0;
+				}
+				&-next {
+					right: 50%;
+					margin-right: -25px;
+					border: 0;
+					padding: 0;
+					background: transparent;
+					border-left: 7px solid #5a6a71;
+					border-top: 5px solid transparent;
+					border-bottom: 5px solid transparent;
+					font-size: 0;
+				}
+				&-list {
+					border-radius: 8px 0 0 0;
+				}
+				&-dots {
+					background: #dae4e8;
+					border-radius: 0 0 0 8px;
+					height: 42px;
+					padding: 7px 0;
+					text-align: center;
+					margin-bottom: 0 !important;
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+
+					li {
+						line-height: 0;
+						display: inline-block;
+						margin: 0 4px;
+						height: 6px;
+						width: 6px;
+						font-size: 0;
+
+						&.slick-active {
+							background: #b0bcc1;
+							border-radius: 50%;
+						}
+						button {
+							border: 1px solid #b0bcc1;
+							padding: 0;
+							border-radius: 50%;
+							background: transparent;
+							width: 6px;
+							height: 6px;
+							@include transition($transition);
+						}
+					}
+				}
+			}
+			.item {
+				cursor: pointer;
+				padding: 20px 35px;
+				line-height: 23px;
+				border-bottom: 1px solid #cbd7db;
+				height: 88px;
+				@include flexbox();
+				@include align-items(center);
+
+				&.slick-current {
+					background: #f26522;
+					color: #fff;
+				}
+			}
+			@media (max-width: $screen-md-max) {
+				max-width: 100%;
+				border-radius: 0 0 0 0;
+
+				.slick {
+					&-arrow,
+					&-dots {
+						display: none !important;
+					}
+					&-track {
+						display: -webkit-box !important;
+						display: -webkit-flex !important;
+						display: -moz-flex !important;
+						display: -ms-flexbox !important;
+						display: flex !important;
+					}
+					&-list {
+						padding: 0 10% !important;
+					}
+				}
+				.item {
+					max-width: 70%;
+					height: 90px;
+					padding: 25px 10px;
+					border-bottom: 0;
+					border-right: 1px solid #cbd7db;
+					text-align: center;
+					@include flexbox();
+					@include align-items(center);
+					@include justify-content(center);
+
+					&:last-child {
+						border-right: 0;
+					}
+				}
+			}
+			@media (max-width: 800px) {
+				.slick {
+					&-list {
+						padding: 0 20% !important;
+					}
+				}
+				.item {
+					max-width: 40%;
+				}
+			}
+		}
+	}
+	&-partners {
+		.slick {
+			&-track {
+				@include flexbox();
+				@include align-items(center);
+			}
+			&-slide {
+				img {
+					@include grayscale('on', 100);
+					@include transition($transition);
+					@include opacity(.4);
+
+					&:hover {
+						@include grayscale('on', 0);
+						@include opacity(1);
+					}
+				}
+			}
+			&-arrow {
+				position: absolute;
+				bottom: -7px;
+				z-index: 2;
+			}
+			&-prev {
+				left: 50%;
+				margin-left: -25px;
+				border: 0;
+				padding: 0;
+				background: transparent;
+				border-right: 10px solid #D4D8DA;
+				border-top: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+				font-size: 0;
+			}
+			&-next {
+				right: 50%;
+				margin-right: -25px;
+				border: 0;
+				padding: 0;
+				background: transparent;
+				border-left: 10px solid #D4D8DA;
+				border-top: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+				font-size: 0;
+			}
+			&-dots {
+				height: 42px;
+				padding: 7px 0;
+				position: relative;
+				top: 20px;
+				text-align: center;
+				margin-bottom: 0 !important;
+
+				li {
+					line-height: 0;
+					display: inline-block;
+					margin: 0 4px;
+					height: 14px;
+					width: 14px;
+					font-size: 0;
+
+					&.slick-active {
+						background: #b0bcc1;
+						border-radius: 50%;
+					}
+					button {
+						border: 1px solid #b0bcc1;
+						padding: 0;
+						border-radius: 50%;
+						background: transparent;
+						height: 14px;
+						width: 14px;
+						@include transition($transition);
+					}
+				}
+			}
+		}
+		@media (min-width: $screen-sm) {
+			.slick {
+				&-arrow {
+					display: none !important;
+				}
+			}
+		}
+		@media (max-width: $screen-sm-max) {
+			.slick {
+				&-slide {
+					img {
+						width: 80%;
+					}
+				}
+			}
+		}
+		@media (max-width: $screen-xs-max) {
+			.slick {
+				&-slide {
+					img {
+						width: 80%;
+						margin: 0 auto;
+					}
+				}
+				&-prev {
+					left: calc(50% - 10px);
+				}
+				&-next {
+					right: calc(50% - 10px);
+				}
+				&-dots {
+					li {
+						height: 7px;
+						width: 7px;
+
+						button {
+							height: 7px;
+							width: 7px;
+						}
+					}
+				}
+			}
+		}
+	}
 }

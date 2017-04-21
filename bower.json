@@ -19,6 +19,7 @@
     "bootstrap-sass": "3.*",
     "jquery.form-styler": "jquery-form-styler#^1.7.8",
     "jssocials": "^1.4.0",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "jScrollPane": "^2.0.23"
   }
 }

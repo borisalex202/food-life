@@ -30,6 +30,7 @@ var path = {
     },
     watch: {
         html: 'src/**/*.html',
+        jsAll: 'src/js/*.js',
         jsInternal: ['src/js/**/*.js', '!src/js/external.js'],
         jsExternal: 'src/js/external.js',
         styleInternal: ['src/sass/**/*.scss', '!src/sass/external.scss'],
@@ -119,6 +120,7 @@ module.exports = {
     },
     watch: {
         html: path.watch.html,
+        jsAll: path.watch.jsAll,
         jsInternal: path.watch.jsInternal,
         jsExternal: path.watch.jsExternal,
         sassInternal: path.watch.styleInternal,

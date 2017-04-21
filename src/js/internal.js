@@ -117,7 +117,7 @@
     });
 
     $(document).mouseup(function (e){
-  		var el = elements.cityChoice;
+  		var el = $('.city-choice, .search');
   		if (!el.is(e.target)
   		    && el.has(e.target).length === 0) {
   					el.removeClass('active');
@@ -138,6 +138,29 @@
             $(this).parent().find('.letter-hide').slideUp();
             showLetter = 0;
         }
+    });
+
+    $('.search-icon').on('click', function () {
+       $(this).closest('.search').toggleClass('active').find('.search-input').focus();
+    });
+
+    $('.city-link').on('click', function (e) {
+        e.preventDefault();
+
+        var id = $(this).attr('href');
+        $('.city-link').removeClass('active');
+        $('.city-tab').removeClass('active');
+        $(this).addClass('active');
+        $(id).addClass('active');
+    });
+
+    $('.scroll-pane').jScrollPane({
+        autoReinitialise: true
+    });
+
+    $('.city-swipe').on('click', function () {
+        $(this).toggleClass('active');
+        $(this).find('.content').slideToggle();
     });
 
 })(jQuery);

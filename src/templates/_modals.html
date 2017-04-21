@@ -118,3 +118,77 @@
   </div>
 </div>
 }
+@@if ( context.donation === 'true') {
+<div class="modal fade standard" id="donation" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="modal-close" data-dismiss="modal"></button>
+      <div class="modal-body">
+        <form action="">
+          <h2 class="modal-title">Пожертвовать средства</h2>
+          <div class="form-group">
+            <input type="text" placeholder="Как вас зовут?" class="form-control">
+          </div>
+          <div class="form-group">
+            <select class="select select-minimal form-control" data-placeholder="Интересующий город">
+              <option value=""></option>
+              <option value="">Москва</option>
+              <option value="">Санкт-петербург</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="select select-minimal form-control" data-placeholder="Какому проекту вы хотите пожертвовать?">
+              <option value=""></option>
+              <option value="">Москва</option>
+              <option value="">Санкт-петербург</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><strong>Сумма пожертвования</strong></label>
+            <div class="row">
+              <div class="col-sm-6 col-xs-12">
+                <label class="radio">
+                  <input type="radio" name="price">
+                  <span class="icn"></span>
+                  <span class="text">300 руб.</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="price">
+                  <span class="icn"></span>
+                  <span class="text">500 руб.</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="price">
+                  <span class="icn"></span>
+                  <span class="text">1000 руб.</span>
+                </label>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <label class="radio">
+                  <input type="radio" name="price">
+                  <span class="icn"></span>
+                  <span class="text">1500 руб.</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="price">
+                  <span class="icn"></span>
+                  <span class="text">2000 руб.</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="price">
+                  <span class="icn"></span>
+                  <span class="text">3000 руб.</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="… или введите сумму" class="form-control">
+          </div>
+          <input type="submit" class="btn btn-primary" value="Пожертвовать">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+}
