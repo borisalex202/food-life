@@ -634,6 +634,7 @@
     padding: 15px 25px;
     width: 100%;
     margin: 20px 0;
+    display: block;
   }
   .social {
     margin-top: 40px;
@@ -2174,6 +2175,7 @@
   }
   &-main {
     position: relative;
+    min-height: 600px;
   }
   &-map {
     position: absolute;
@@ -2579,6 +2581,8 @@
   }
 }
 .load-more {
+  clear: both;
+  width: 100%;
   text-align: center;
   margin-top: 40px;
 

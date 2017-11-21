@@ -108,13 +108,13 @@
       $(this).closest(elements.cityChoice).toggleClass('active');
     });
 
-    elements.cityItem.on('click', function(e){
-      var text = $(this).text();
-
-      e.preventDefault();
-      elements.cityCurrent.find('span').text(text);
-      elements.cityChoice.removeClass('active');
-    });
+    // elements.cityItem.on('click', function(e){
+    //   var text = $(this).text();
+    //
+    //   e.preventDefault();
+    //   elements.cityCurrent.find('span').text(text);
+    //   elements.cityChoice.removeClass('active');
+    // });
 
     $(document).mouseup(function (e){
   		var el = $('.city-choice, .search');
@@ -124,19 +124,19 @@
   		}
   	});
 
-    var showLetter = 0;
+    $('.letter-more').data('show-letter', 0);
     $('.letter-description p:hidden').addClass('letter-hide');
     $('.letter-more').on('click', function (e) {
         e.preventDefault();
         $(this).text(function(i, text){
             return text === "Читать полностью" ? "Свернуть" : "Читать полностью";
         });
-        if(showLetter == 0) {
+        if($(this).data('show-letter') === 0) {
             $(this).parent().find('.letter-hide').slideDown();
-            showLetter = 1;
+            $(this).data('show-letter', 1);
         } else {
             $(this).parent().find('.letter-hide').slideUp();
-            showLetter = 0;
+            $(this).data('show-letter', 0)
         }
     });
 
